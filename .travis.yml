@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "7"
+dist: trusty
+services:
+  - docker
+before_install:
+  - npm --prefix angular install
+script:
+  - npm run --prefix angular build
+  - docker build -t maesi/cdays-19$TRAVIS_BUILD_NUMBER -f docker/Dockerfile .
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
