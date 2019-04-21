@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker login -u "$DOCKER_USERNAME" -u "$DOCKER_PASSWORD"
 docker push maesi/cdays-19
