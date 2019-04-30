@@ -7,10 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
 
-  @Input() protected key: string;
-  @Input() protected image: string;
-  @Input() protected label: string;
-  @Input() protected description: string;
+  @Input() public key: string;
+  @Input() public image: string;
+  @Input() public label: string;
+  @Input() public description: string;
 
   constructor() { }
 }
