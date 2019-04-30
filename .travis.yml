@@ -1,9 +1,11 @@
 language: node_js
 node_js:
   - "10"
-services:
-  - docker
 before_install:
-  - npm angular ci
+  - npm ci
 script:
   - npm run build
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: node scripts/deploy.js $FTP_HOST $FTP_USER $FTP_PASSWORD
