@@ -2,6 +2,12 @@ language: node_js
 node_js:
   - "10"
 before_install:
+  - sed -i -e "s|<your-key>|$FIREBASE_API_KEY|g" ./src/environments/environment.prod.ts 
+  - sed -i -e "s|<your-project-authdomain>|$FIREBASE_AUTH_DOMAIN|g" ./src/environments/environment.prod.ts 
+  - sed -i -e "s|<your-database-URL>|$FIREBASE_DATABASE_URL|g" ./src/environments/environment.prod.ts 
+  - sed -i -e "s|<your-project-id>|$FIREBASE_PROJECT_ID|g" ./src/environments/environment.prod.ts 
+  - sed -i -e "s|<your-storage-bucket>|$FIREBASE_STORAGE_BUCKET|g" ./src/environments/environment.prod.ts 
+  - sed -i -e "s|<your-messaging-sender-id>|$FIREBASE_MESSAGING_SENDER_ID|g" ./src/environments/environment.prod.ts 
   - npm ci
 script:
   - npm run build
