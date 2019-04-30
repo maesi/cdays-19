@@ -11,7 +11,7 @@ let config = {
 
 let options = {
     exclude: [
-        'rest'
+        '.htaccess'
     ],
     excludeMode: 'ignore'
 };
