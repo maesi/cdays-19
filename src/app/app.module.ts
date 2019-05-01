@@ -10,7 +10,7 @@ import { CardStackComponent } from './card-stack/card-stack.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
