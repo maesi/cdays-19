@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SessionService } from '../session.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -12,18 +11,19 @@ import { first } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   returnUrl: String;
-  submitted: boolean;
-  loading: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute, 
     private router: Router, 
     private session: SessionService) {
-    
-      if (this.session.isLoggedIn()) {
-      this.router.navigate(['/']);
-    }
+    this.session.currentUser.subscribe(
+      user => {
+        if (user !== null) {
+          this.router.navigate([this.returnUrl])
+        }
+      }
+    );
   }
 
   ngOnInit() {
@@ -37,26 +37,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-
     if (this.loginForm.invalid) {
-        return;
+      return;
     }
-
-    this.loading = true;
-    this.session.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value)
-        .pipe(first())
-        .subscribe(
-            data => {
-              if(data) {
-                this.router.navigate([this.returnUrl]);
-              } else {
-                this.loading = false;
-              }
-            },
-            error => {
-                this.loading = false;
-            });
-}
-
+    this.session.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value);
+  }
 }
