@@ -15,3 +15,5 @@ deploy:
   - provider: script
     skip_cleanup: true
     script: node scripts/deploy.js $FTP_HOST $FTP_USER $FTP_PASSWORD
+    on:
+      branch: master
