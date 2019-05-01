@@ -4,11 +4,23 @@ import { CardStackComponent } from './card-stack/card-stack.component';
 import { LoginComponent } from './login/login.component';
 import { LoginGuard } from './login.guard';
 import { LogoutComponent } from './logout/logout.component';
+import {ProfileComponent} from './profile/profile.component';
+import {MatchesComponent} from './matches/matches.component';
 
 const routes: Routes = [
   {
     path: 'cards', 
     component: CardStackComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'matches',
+    component: MatchesComponent,
     canActivate: [LoginGuard]
   },
   {

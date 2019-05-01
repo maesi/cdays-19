@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { ProfileComponent } from './profile/profile.component';
+import { MatchesComponent } from './matches/matches.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { environment } from 'src/environments/environment';
     CardComponent,
     CardStackComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    ProfileComponent,
+    MatchesComponent
   ],
   imports: [
     FormsModule,
