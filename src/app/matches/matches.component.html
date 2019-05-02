@@ -1,5 +1,5 @@
 <div *ngFor="let topic of topics | async" class="media">
-  <img alt="{{topic.label}}" class="align-self-center mr-3" src="{{(topic.image)}}" width="64px" height="64px">
+  <img alt="{{topic.label}}" class="align-self-center mr-3 topic-image" src="{{(topic.image)}}" width="64px" height="64px">
   <div class="media-body">
     <p>{{topic.label}} <span class="badge badge-success">{{(topic.likes)?.length || 0}} Likes</span></p>
   </div>

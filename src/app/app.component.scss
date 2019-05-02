@@ -17,3 +17,14 @@
 .fixed-bottom {
   background-color: rgba(222, 220, 210, 0.25);
 }
+
+#notifications {
+  position: relative;
+}
+
+#notification-counter {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 10px;
+}
