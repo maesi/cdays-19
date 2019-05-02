@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SessionService} from "../session.service";
+import {Observable} from "rxjs";
+import {User} from "../types/user";
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  currentUser$: Observable<User>;
+
+  constructor(private sessionService: SessionService) {
+    this.currentUser$ = this.sessionService.currentUser;
+  }
 
   ngOnInit() {
   }

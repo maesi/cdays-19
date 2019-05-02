@@ -1,16 +1,20 @@
 <div class="stage">
-  <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+  <div class="stackedcards stackedcards--animatable" id="stacked-cards-block">
     <div class="stackedcards-container">
-      <app-card *ngFor="let card of cards" [key]="card.id" [image]="card.image" [label]="card.label"
-        [description]="card.description"></app-card>
+
+      <app-card *ngFor="let card of cards | async" [description]="card.description" [image]="card.image" [key]="card.id"
+                [label]="card.label"></app-card>
     </div>
     <div class="stackedcards--animatable stackedcards-overlay top"><img
-        src="https://image.ibb.co/m1ykYS/rank_army_star_2_3x.png" width="auto" height="auto" /></div>
-    <div class="stackedcards--animatable stackedcards-overlay right"><img src="https://image.ibb.co/dCuESn/Path_3x.png"
-        width="auto" height="auto" /></div>
+      height="auto" src="https://image.ibb.co/m1ykYS/rank_army_star_2_3x.png" width="auto"/></div>
+    <div class="stackedcards--animatable stackedcards-overlay right"><img height="auto"
+                                                                          src="https://image.ibb.co/dCuESn/Path_3x.png"
+                                                                          width="auto"/></div>
     <div class="stackedcards--animatable stackedcards-overlay left"><img
-        src="https://image.ibb.co/heTxf7/20_status_close_3x.png" width="auto" height="auto" /></div>
+      height="auto" src="https://image.ibb.co/heTxf7/20_status_close_3x.png" width="auto"/></div>
   </div>
+
+
   <div class="global-actions">
     <div class="left-action dislike-button"><i class="far fa-thumbs-up fa-rotate-180"></i></div>
     <div class="top-action add-button"><i class="fas fa-plus"></i>
@@ -20,7 +24,7 @@
 </div>
 
 <div class="final-state hidden">
-  <img src="../../assets/emoji.png" alt="swiped through emoji">
+  <img alt="swiped through emoji" src="../../assets/emoji.png">
   <h2>Es gibt keine Themen mehr!</h2>
   <p>Animiere deine Kollegen neue Themen einzugeben oder erstelle jetzt dein eigenes!</p>
   <a class="btn btn-primary add-topic-button">Thema hinzufügen</a>

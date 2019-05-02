@@ -1,6 +1,7 @@
-export class Card {
+export class Topic {
     id: string;
-    image: string;
     label: string;
+  image: string;
     description: string;
+  likes: any[];
 }
