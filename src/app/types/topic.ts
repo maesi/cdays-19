@@ -3,5 +3,5 @@ export class Topic {
     label: string;
   image: string;
     description: string;
-  likes: any[];
+  likes?: any[];
 }

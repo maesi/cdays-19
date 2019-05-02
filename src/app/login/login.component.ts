@@ -18,23 +18,18 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router, 
     private session: SessionService) {
-    this.session.currentUser.subscribe(
-      user => {
-        if (user !== null) {
-          this.router.navigate([this.returnUrl])
-        }
-      }
-    );
   }
 
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+    if (this.session.isLoggedIn()) {
+      this.router.navigate([this.returnUrl])
+    }
     this.loginForm = this.formBuilder.group({
       username: ['cdays', Validators.required],
       password: ['cdays', Validators.required]
     });
-    this.loginForm.controls
-
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   onSubmit() {

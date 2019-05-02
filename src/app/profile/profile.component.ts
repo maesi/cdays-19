@@ -10,13 +10,13 @@ import {User} from "../types/user";
 })
 export class ProfileComponent implements OnInit {
 
-  currentUser$: Observable<User>;
+  currentUser: User;
 
   constructor(private sessionService: SessionService) {
-    this.currentUser$ = this.sessionService.currentUser;
   }
 
   ngOnInit() {
+    this.currentUser = this.sessionService.getUser();
   }
 
 }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable, of} from 'rxjs';
-import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/firestore";
 import {User} from "./types/user";
+import {Router} from "@angular/router";
 
 const localStorageKey = "cdays-user";
 
@@ -9,18 +8,11 @@ const localStorageKey = "cdays-user";
   providedIn: 'root'
 })
 export class SessionService {
-  private itemsCollection: AngularFirestoreCollection<User>;
 
-  private $currentUserSubject: BehaviorSubject<User | null>;
-  private $currentUser: Observable<User>;
+  private user: User;
 
 
-  private username: string;
-
-
-  constructor(private afs: AngularFirestore) {
-    this.$currentUserSubject = new BehaviorSubject<User | null>(null);
-    this.$currentUser = this.$currentUserSubject.asObservable();
+  constructor(private router: Router) {
     let userAsString = localStorage.getItem(localStorageKey);
     if (userAsString !== null) {
       let user = JSON.parse(userAsString);
@@ -28,24 +20,20 @@ export class SessionService {
     }
   }
 
-  public get currentUser(): Observable<User> {
-    return this.$currentUser;
+  public getUser(): User {
+    return this.user;
   }
 
-
   public isLoggedIn(): boolean {
-    return this.$currentUserSubject.getValue() !== null;
+    return this.user !== null && this.user !== undefined;
   }
 
   public login(username: string, password: string): void {
-    this.afs.collection<User>('user', ref => ref.where('username', '==', username)
-                                                .where('passwort', '==', password))
-        .valueChanges()
-        .subscribe(users => {
-          if (users.length === 1) {
-            this.updateUser(users[0]);
-          }
-        });
+    this.updateUser(username === password ? {
+      username: username,
+      passwort: password,
+      avatar: "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
+    } : null);
   }
 
   public logout(): void {
@@ -53,11 +41,12 @@ export class SessionService {
   }
 
   private updateUser(user: User): void {
+    this.user = user;
     if (user === null) {
       localStorage.removeItem(localStorageKey);
     } else {
       localStorage.setItem(localStorageKey, JSON.stringify(user));
+      this.router.navigate(['/']);
     }
-    this.$currentUserSubject.next(user);
   }
 }

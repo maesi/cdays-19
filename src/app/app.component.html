@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light fixed-top bg-light bg-shadow">
+<nav *ngIf="isLoggedIn" class="navbar navbar-light fixed-top bg-light bg-shadow">
   <a class="navbar-brand text-center" routerLink="/profile"><i class="fas fa-user"></i><br/><span class="menu-text">Profil</span></a>
   <a class="navbar-brand text-center" routerLink="/explore"><i class="fab fa-wpexplorer"></i><br/><span class="menu-text">Entdecken</span></a>
   <a class="navbar-brand text-center" routerLink="/matches"><i class="fas fa-history"></i><br/><span class="menu-text">Interessen</span></a>

@@ -36,6 +36,11 @@ const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
+    path: 'appointment/:id/create',
+    component: AppointmentComponent,
+    canActivate: [LoginGuard]
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },

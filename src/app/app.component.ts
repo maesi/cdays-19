@@ -11,6 +11,6 @@ export class AppComponent {
   isLoggedIn: boolean;
 
   constructor(private sessionService: SessionService) {
-    this.isLoggedIn = this.sessionService.isLoggedIn();
+    this.isLoggedIn = true;
   }
 }

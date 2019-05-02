@@ -2,7 +2,7 @@
   <div class="stackedcards stackedcards--animatable" id="stacked-cards-block">
     <div class="stackedcards-container">
 
-      <app-card *ngFor="let card of cards | async" [description]="card.description" [image]="card.image" [key]="card.id"
+      <app-card *ngFor="let card of cards" [description]="card.description" [image]="card.image" [key]="card.id"
                 [label]="card.label"></app-card>
     </div>
     <div class="stackedcards--animatable stackedcards-overlay top"><img
@@ -22,7 +22,9 @@
     <div class="right-action like-button"><i class="far fa-thumbs-up"></i></div>
   </div>
 </div>
-
+<div *ngIf="matchIndex">Du hast einen Match. <a [routerLink]="['/appointment', matchIndex, 'create']">Erstelle Event
+  einen Event</a>.
+</div>
 <div class="final-state hidden">
   <img alt="swiped through emoji" src="../../assets/emoji.png">
   <h2>Es gibt keine Themen mehr!</h2>
