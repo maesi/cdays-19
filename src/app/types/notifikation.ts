@@ -3,9 +3,8 @@ import {Meeting} from "./meeting";
 import {User} from "./user";
 
 export interface Notifikation {
-  id: string;
+  id: number;
   typ: NotifikationTyp;
-  user: User;
   relation: Topic | Meeting;
 }
 

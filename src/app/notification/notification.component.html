@@ -1,31 +1,31 @@
 <hr>
-<div *ngFor="let not of notifikations | async">
-  <a class="notification" *ngIf="not.typ === 1" routerLink="notifications/appointment">
+<div *ngFor="let not of notifikationen">
+  <a class="notification" *ngIf="not.typ === NotifikationTyp.MATCH" [routerLink]="['/appointment', not.relation.topic.id , 'create']">
     <div class="media">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/trophy.png" height="64px" width="64px" />
-      <p><b>Dein Thema gewinnt an Interesse!</b></p>
+      <p><b>Dein Thema {{not.relation.label}}gewinnt an Interesse!</b></p>
     </div>
     <hr>
   </a>
 
-  <a class="notification" *ngIf="not.typ === 2" routerLink="notifications/appointment">
+  <a class="notification" *ngIf="not.typ === NotifikationTyp.EVENT" [routerLink]="['/appointment', not.relation.id]">
     <div class="media">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/calendar.jpg" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>Es gibt ein Event für dein Interesse!</b> Am 12. Mai findet ein Austausch zum Thema Excel statt - nimmst du teil?</p>
+        <p><b>Es gibt ein Event für dein Interesse!</b> Am {{not.relation.datum}} findet ein Austausch zum Thema {{not.relation.topic.label}} statt - nimmst du teil?</p>
       </div>
     </div>
     <hr>
   </a>
 
-  <a class="notification" *ngIf="not.typ === 3" routerLink="notifications/appointment">
+  <a class="notification" *ngIf="not.typ === NotifikationTyp.PARTIPICATE" [routerLink]="['/appointment', not.relation.id]">
     <div class="media">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/max.jpg" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>Neuer Teilnehmer!</b> Du hast eine neue Anmeldung zu deinem Event vom !</p>
+        <p><b>Neuer Teilnehmer!</b> Du hast eine neue Anmeldung zu deinem Event vom {{not.relation.datum}} zum Thema {{not.relation.topic.label}} </p>
       </div>
     </div>
     <hr>

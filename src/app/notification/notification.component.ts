@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/firestore";
-import {Observable} from "rxjs";
-import {Notifikation} from "../types/notifikation";
+import {StorageService} from '../storage.service';
+import {Notifikation, NotifikationTyp} from '../types/notifikation';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-notification',
@@ -9,12 +9,13 @@ import {Notifikation} from "../types/notifikation";
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
-  public notifikations: Observable<Notifikation[]>;
-  private notifikationCollection: AngularFirestoreCollection<Notifikation>;
 
-  constructor(private afs: AngularFirestore) {
-    this.notifikationCollection = afs.collection<Notifikation>('notification');
-    this.notifikations = this.notifikationCollection.valueChanges();
+  notifikationen: Notifikation[];
+  NotifikationTyp = NotifikationTyp;
+
+  constructor(private storageServie: StorageService) {
+    this.notifikationen = this.storageServie.getNotifikationen();
+    this.storageServie.resetNotifikationCount();
   }
 
   ngOnInit() {

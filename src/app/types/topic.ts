@@ -1,5 +1,5 @@
 export class Topic {
-  id: string;
+  id: number;
   label: string;
   image: string;
   description: string;
