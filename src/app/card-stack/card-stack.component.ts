@@ -2,6 +2,8 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Topic} from '../types/topic';
 import {StorageService} from "../storage.service";
 
+const likeToMatch = 2; // Der wievielte Like fürt zu einem Match
+
 @Component({
   selector: 'app-card-stack',
   templateUrl: './card-stack.component.html',
@@ -28,8 +30,6 @@ export class CardStackComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     let _this = this;
-    var likeCount = 0;
-    var matchIndex = 2;
     var stackedOptions = 'Top'; //Change stacked cards view from 'Bottom', 'Top' or 'None'.
     var rotate = true; //Activate the elements' rotation for each move on stacked cards.
     var items = 3; //Number of visible elements when the stacked options are bottom or top.
@@ -274,10 +274,7 @@ export class CardStackComponent implements OnInit, AfterViewInit {
         transformUi(1000, 0, 0, topObj); //Move topOverlay
         resetOverlayRight();
       }
-      likeCount = likeCount + 1;
-      if (likeCount >= matchIndex) {
-        _this.match(currentPosition);
-      }
+      _this.like(currentPosition);
 
       currentPosition = currentPosition + 1;
       updateUi();
@@ -297,6 +294,7 @@ export class CardStackComponent implements OnInit, AfterViewInit {
         transformUi(0, -1000, 0, topObj); //Move topOverlay
         resetOverlays();
       }
+      _this.dislike(currentPosition);
 
       currentPosition = currentPosition + 1;
       updateUi();
@@ -739,16 +737,13 @@ export class CardStackComponent implements OnInit, AfterViewInit {
     buttonRight.addEventListener('click', onActionRight, false);
   }
 
-  like(id: string): void {
-    console.log('like' + id);
+  private dislike(index: number): void {
+    this.service.dislikeTopic(index);
   }
-
-  dislike(id: string): void {
-    console.log('dislike' + id);
+  private like(index: number): void {
+    this.service.likeTopic(index);
+    if (++this.likeCount >= likeToMatch) {
+      this.matchIndex = index;
+    }
   }
-
-  private match(index: number) {
-    this.matchIndex = index;
-  }
-
 }
