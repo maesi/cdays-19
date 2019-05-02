@@ -4,14 +4,14 @@
 
 /* class created only for a better preview*/
 .stage {
-  opacity: 1;
+  display:block;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .stage.hidden {
-  opacity: 0;
+  display: none;
   transition: all 400ms ease;
 }
 
@@ -68,20 +68,19 @@
 }
 
 .final-state.active {
-  position: absolute;
-  opacity: 1;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transition: all 400ms ease;
+  margin-top: 5rem;
+  display: block;
+  text-align: center;
 }
 
 .final-state.hidden {
-  opacity: 0;
+  display: none
+}
+
+.add-topic-button {
+  margin-top: 2rem;
+  color: white !important;
+  width: 100%;
 }
 
 
