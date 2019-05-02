@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {StorageService} from "../storage.service";
+import {ActivatedRoute} from "@angular/router";
+import {Topic} from "../types/topic";
 
 @Component({
   selector: 'app-appointment',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentComponent implements OnInit {
 
-  constructor() { }
+  topic: Topic;
+
+  constructor(private storageService: StorageService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.topic = this.storageService.getTopis()
+                       .find(top => {
+                           return top.id === params.get('id')
+                         }
+                       )
+    });
   }
+
 
 }

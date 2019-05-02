@@ -1,10 +1,5 @@
-<div class="topic-image" style="background-image: url('../../assets/cloud.jpg')"></div>
-<h1 class="topic-image-title">Topic Title</h1>
-<p>Quick description about the topic? --> Just a proposal</p>
-
-<div class="appointment-buttonset">
-<a class="btn btn-primary appointment-button">Erstelle ein Event</a>
-
-<a class="btn btn-success appointment-button">Bin dabei!</a>
-<a class="btn btn-danger appointment-button">Leider nein</a>
-</div>
+<div class="topic-image"><img [src]="topic.image" class="topic-image"/></div>
+<h1 class="topic-image-title">{{topic.label}}</h1>
+<p>{{topic.description}}</p>
+<a [routerLink]="['/appointment/create']" class="btn btn-primary create-event-button">Event
+  erstellen</a>
