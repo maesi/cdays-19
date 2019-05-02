@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   returnUrl: String;
+  submitted: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
