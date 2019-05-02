@@ -17,6 +17,10 @@ export class CardStackComponent implements OnInit, AfterViewInit {
   constructor(private service: StorageService) {
   }
 
+  resetMatchIndex() {
+    this.matchIndex = undefined;
+  }
+
   ngOnInit() {
     this.likeCount = 0;
     this.cards = this.service.getTopis();
