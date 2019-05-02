@@ -1,28 +1,34 @@
+<hr>
 <div *ngFor="let not of notifikations | async">
-  <a *ngIf="not.typ === 1" href="notifications/appointment">
-    <div class="media" style="border-bottom: 1px solid grey; padding-bottom: 10px; margin-bottom: 10px">
+  <a class="notification" *ngIf="not.typ === 1" routerLink="notifications/appointment">
+    <div class="media">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
-           src="../../assets/trophy.png">
-      <p><b>Your topic gains interest!</b> Why don't you set up an appointment?</p>
+           src="../../assets/trophy.png" height="64px" width="64px" />
+      <p><b>Dein Thema gewinnt an Interesse!</b></p>
     </div>
+    <hr>
   </a>
-  <a *ngIf="not.typ === 2" href="notifications/appointment">
-    <div class="media" style="border-bottom: 1px solid grey; padding-bottom: 10px; margin-bottom: 10px">
+
+  <a class="notification" *ngIf="not.typ === 2" routerLink="notifications/appointment">
+    <div class="media">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
-           src="../../assets/calendar.jpg">
+           src="../../assets/calendar.jpg" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>Your topic will be discussed!</b> There's an appointment on June 15th - do you participate?</p>
+        <p><b>Es gibt ein Event für dein Interesse!</b> Am 12. Mai findet ein Austausch zum Thema Excel statt - nimmst du teil?</p>
       </div>
     </div>
+    <hr>
   </a>
-  <a *ngIf="not.typ === 3" href="notifications/appointment">
-    <div class="media" style="border-bottom: 1px solid grey; padding-bottom: 10px; margin-bottom: 10px">
-      src="../../assets/calendar.jpg">
+
+  <a class="notification" *ngIf="not.typ === 3" routerLink="notifications/appointment">
+    <div class="media">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
-           src="../../assets/max.jpg">
+           src="../../assets/max.jpg" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>New participant!</b> Max Muster will participate on your event!</p>
+        <p><b>Neuer Teilnehmer!</b> Du hast eine neue Anmeldung zu deinem Event vom !</p>
       </div>
     </div>
+    <hr>
   </a>
+
 </div>
