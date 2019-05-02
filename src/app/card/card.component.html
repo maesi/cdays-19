@@ -1,18 +1,10 @@
 <div class="card" id="{{key}}">
   <div class="card-content">
-    <div class="card-image"><img src="{{image}}" width="100%" height="100%" /></div>
+    <div class="card-image"><img height="100%" src="{{image}}" width="100%"/></div>
     <div class="card-titles">
-      <h1 [outerHTML]="label"></h1>
-      <h3 [outerHTML]="description"></h3>
-    </div>
-  </div>
-  <div class="card-footer">
-    <div class="popular-destinations-text">Popular <br /> Desdfdtinations</div>
-    <div class="popular-destinations-images">
+      <h1>{{label}}</h1>
+      <h3>{{description}}{{image}}</h3>
 
-      <div class="circle"><img src="https://image.ibb.co/jmEYL7/adventure_1.jpg" width="100%" height="100%" /></div>
-      <div class="circle"><img src="https://image.ibb.co/nsCynn/adventure_2.jpg" width="100%" height="100%" /></div>
-      <div class="circle"><img src="https://image.ibb.co/hmsL07/adventure_3.jpg" width="100%" height="100%" /></div>
     </div>
   </div>
 </div>

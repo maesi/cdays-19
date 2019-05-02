@@ -1,35 +1,28 @@
-<a routerLink="notifications/appointment">
-<div class="media">
-  <img src="../../assets/trophy.png" class="align-self-center mr-3 notification-image" alt="topic_name">
-  <div class="media-body">
-    <p><b>Your topic gains interest!</b> Why don't you set up an appointment?</p>
-  </div>
-</div>
-</a>
-<hr>
-<a routerLink="">
-  <div class="media">
-    <img src="../../assets/calendar.jpg" class="align-self-center mr-3 notification-image" alt="topic_name">
-    <div class="media-body">
-      <p><b>Your topic will be discussed!</b> There's an appointment on June 15th - do you participate?</p>
-    </div>
-  </div>
-</a>
-<hr>
-<a routerLink="">
-  <div class="media">
-    <img src="../../assets/trophy.png" class="align-self-center mr-3 notification-image" alt="topic_name">
-    <div class="media-body">
+<div *ngFor="let not of notifikations | async">
+  <a *ngIf="not.typ === 1" href="notifications/appointment">
+    <div class="media" style="border-bottom: 1px solid grey; padding-bottom: 10px; margin-bottom: 10px">
+      <img alt="topic_name" class="align-self-center mr-3 notification-image"
+           src="../../assets/trophy.png">
       <p><b>Your topic gains interest!</b> Why don't you set up an appointment?</p>
     </div>
-  </div>
-</a>
-<hr>
-<a routerLink="notifications/appointment">
-  <div class="media">
-    <img src="../../assets/max.jpg" class="align-self-center mr-3 notification-image" alt="topic_name">
-    <div class="media-body">
-      <p><b>New participant!</b> Max Muster will participate on your event!</p>
+  </a>
+  <a *ngIf="not.typ === 2" href="notifications/appointment">
+    <div class="media" style="border-bottom: 1px solid grey; padding-bottom: 10px; margin-bottom: 10px">
+      <img alt="topic_name" class="align-self-center mr-3 notification-image"
+           src="../../assets/calendar.jpg">
+      <div class="media-body">
+        <p><b>Your topic will be discussed!</b> There's an appointment on June 15th - do you participate?</p>
+      </div>
     </div>
-  </div>
-</a>
+  </a>
+  <a *ngIf="not.typ === 3" href="notifications/appointment">
+    <div class="media" style="border-bottom: 1px solid grey; padding-bottom: 10px; margin-bottom: 10px">
+      src="../../assets/calendar.jpg">
+      <img alt="topic_name" class="align-self-center mr-3 notification-image"
+           src="../../assets/max.jpg">
+      <div class="media-body">
+        <p><b>New participant!</b> Max Muster will participate on your event!</p>
+      </div>
+    </div>
+  </a>
+</div>
