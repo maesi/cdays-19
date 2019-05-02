@@ -11,7 +11,7 @@ import {AppointmentComponent} from "./appointment/appointment.component";
 
 const routes: Routes = [
   {
-    path: 'cards',
+    path: 'explore',
     component: CardStackComponent,
     canActivate: [LoginGuard]
   },
@@ -50,7 +50,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/cards',
+    redirectTo: '/explore',
     pathMatch: 'full'
   }
 ];

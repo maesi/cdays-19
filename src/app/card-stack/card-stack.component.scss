@@ -21,7 +21,78 @@
   }
 }
 
+.match-state {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+}
 
+.confetti {
+  background-image: url('../../assets/source.gif');
+  background-position: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 51;
+}
+
+.match-text {
+  position: fixed;
+  top: 12rem;
+  z-index: 52;
+  max-width: 100%;
+}
+
+.match-description {
+  position: fixed;
+  top: 24rem;
+  z-index: 52;
+  max-width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px 0 20px;
+}
+
+.create-event-button {
+  position: fixed;
+  top: 35rem;
+  z-index: 52;
+  width: 90%;
+  color: #fff !important;
+  text-align: center;
+  left: 1rem;
+  right: 1rem;
+}
+
+.explosion {
+  position: fixed;
+  top: 7.5rem;
+  left: 0;
+  right: 0;
+  z-index: 51;
+  max-width: 100%;
+}
+
+.cancel-button {
+  position: fixed;
+  top: 38rem;
+  z-index: 52;
+  width: 90%;
+  color: #fff !important;
+  text-align: center;
+  left: 1rem;
+  right: 1rem;
+}
 
 /* global actions buttons*/
 .global-actions {
