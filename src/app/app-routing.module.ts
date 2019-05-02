@@ -6,10 +6,12 @@ import { LoginGuard } from './login.guard';
 import { LogoutComponent } from './logout/logout.component';
 import {ProfileComponent} from './profile/profile.component';
 import {MatchesComponent} from './matches/matches.component';
+import {NotificationComponent} from "./notification/notification.component";
+import {AppointmentComponent} from "./appointment/appointment.component";
 
 const routes: Routes = [
   {
-    path: 'cards', 
+    path: 'cards',
     component: CardStackComponent,
     canActivate: [LoginGuard]
   },
@@ -21,6 +23,16 @@ const routes: Routes = [
   {
     path: 'matches',
     component: MatchesComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'notifications',
+    component: NotificationComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'notifications/appointment',
+    component: AppointmentComponent,
     canActivate: [LoginGuard]
   },
   {
