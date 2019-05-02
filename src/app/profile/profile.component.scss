@@ -1,0 +1,24 @@
+.profile-image {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 19px 23px 41px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 19px 23px 41px -19px rgba(0,0,0,0.75);
+  box-shadow: 19px 23px 41px -19px rgba(0,0,0,0.75);
+}
+
+.profile-image-title {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.logout {
+  width: 100%;
+  margin-top: 5rem;
+}
