@@ -5,13 +5,9 @@
       <app-card *ngFor="let card of cards" [description]="card.description" [image]="card.image" [key]="card.id"
                 [label]="card.label"></app-card>
     </div>
-    <div class="stackedcards--animatable stackedcards-overlay top"><img
-      height="auto" src="https://image.ibb.co/m1ykYS/rank_army_star_2_3x.png" width="auto"/></div>
-    <div class="stackedcards--animatable stackedcards-overlay right"><img height="auto"
-                                                                          src="https://image.ibb.co/dCuESn/Path_3x.png"
-                                                                          width="auto"/></div>
-    <div class="stackedcards--animatable stackedcards-overlay left"><img
-      height="auto" src="https://image.ibb.co/heTxf7/20_status_close_3x.png" width="auto"/></div>
+    <div class="stackedcards--animatable stackedcards-overlay top"></div>
+    <div class="stackedcards--animatable stackedcards-overlay right like-button"><i class="far fa-thumbs-up"></i></div>
+    <div class="stackedcards--animatable stackedcards-overlay left dislike-button"><i class="far fa-thumbs-up fa-rotate-180"></i></div>
   </div>
 
 
