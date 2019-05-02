@@ -16,11 +16,13 @@ export class StorageService {
     return this.topics.filter(topic => !topic.liked && !topic.disliked);
   }
 
-  public likeTopic(index: number): void {
-    this.topics[index].liked = true;
+  public likeTopic(id: string): void {
+    let topic = this.topics.find(topic => topic.id === id);
+    topic.liked = true;
   }
-  public dislikeTopic(index: number): void {
-    this.topics[index].liked = true;
+  public dislikeTopic(id: string): void {
+    let topic = this.topics.find(topic => topic.id === id);
+    topic.disliked = true;
   }
 
   public getTopic(index: number | string): Topic {

@@ -257,6 +257,8 @@ export class CardStackComponent implements OnInit, AfterViewInit {
         transformUi(-1000, 0, 0, topObj); //Move topOverlay
         resetOverlayLeft();
       }
+      _this.dislike(currentPosition);
+
       currentPosition = currentPosition + 1;
       updateUi();
       currentElement();
@@ -294,7 +296,6 @@ export class CardStackComponent implements OnInit, AfterViewInit {
         transformUi(0, -1000, 0, topObj); //Move topOverlay
         resetOverlays();
       }
-      _this.dislike(currentPosition);
 
       currentPosition = currentPosition + 1;
       updateUi();
@@ -738,10 +739,10 @@ export class CardStackComponent implements OnInit, AfterViewInit {
   }
 
   private dislike(index: number): void {
-    this.service.dislikeTopic(index);
+    this.service.dislikeTopic(this.cards[index].id);
   }
   private like(index: number): void {
-    this.service.likeTopic(index);
+    this.service.likeTopic(this.cards[index].id);
     if (++this.likeCount >= likeToMatch) {
       this.matchIndex = index;
     }

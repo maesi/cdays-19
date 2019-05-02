@@ -1,4 +1,4 @@
-<div *ngIf="!matchIndex" class="stage">
+<div *ngIf="!matchIndex && this.cards.length !== 0" class="stage">
   <div class="stackedcards stackedcards--animatable" id="stacked-cards-block">
     <div class="stackedcards-container">
 
@@ -30,6 +30,12 @@
 </div>
 
 <div class="final-state hidden">
+  <img alt="swiped through emoji" src="../../assets/emoji.png">
+  <h2>Es gibt keine Themen mehr!</h2>
+  <p>Animiere deine Kollegen neue Themen einzugeben oder erstelle jetzt dein eigenes!</p>
+  <a class="btn btn-primary add-topic-button">Thema hinzufügen</a>
+</div>
+<div class="final-state" *ngIf="this.cards.length === 0">
   <img alt="swiped through emoji" src="../../assets/emoji.png">
   <h2>Es gibt keine Themen mehr!</h2>
   <p>Animiere deine Kollegen neue Themen einzugeben oder erstelle jetzt dein eigenes!</p>
