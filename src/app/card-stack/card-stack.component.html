@@ -1,24 +1,19 @@
-<div *ngIf="!matchIndex" class="stage">
+<div *ngIf="!matchIndex && this.cards.length !== 0" class="stage">
   <div class="stackedcards stackedcards--animatable" id="stacked-cards-block">
     <div class="stackedcards-container">
 
       <app-card *ngFor="let card of cards" [description]="card.description" [image]="card.image" [key]="card.id"
                 [label]="card.label"></app-card>
     </div>
-    <div class="stackedcards--animatable stackedcards-overlay top"><img
-      height="auto" src="https://image.ibb.co/m1ykYS/rank_army_star_2_3x.png" width="auto"/></div>
-    <div class="stackedcards--animatable stackedcards-overlay right"><img height="auto"
-                                                                          src="https://image.ibb.co/dCuESn/Path_3x.png"
-                                                                          width="auto"/></div>
-    <div class="stackedcards--animatable stackedcards-overlay left"><img
-      height="auto" src="https://image.ibb.co/heTxf7/20_status_close_3x.png" width="auto"/></div>
+    <div class="stackedcards--animatable stackedcards-overlay top"></div>
+    <div class="stackedcards--animatable stackedcards-overlay right like-button"><i class="far fa-thumbs-up"></i></div>
+    <div class="stackedcards--animatable stackedcards-overlay left dislike-button"><i class="far fa-thumbs-up fa-rotate-180"></i></div>
   </div>
 
 
   <div class="global-actions">
     <div class="left-action dislike-button"><i class="far fa-thumbs-up fa-rotate-180"></i></div>
-    <div class="top-action add-button"><i class="fas fa-plus"></i>
-    </div>
+    <div class="top-action add-button"></div>
     <div class="right-action like-button"><i class="far fa-thumbs-up"></i></div>
   </div>
 </div>
@@ -35,6 +30,12 @@
 </div>
 
 <div class="final-state hidden">
+  <img alt="swiped through emoji" src="../../assets/emoji.png">
+  <h2>Es gibt keine Themen mehr!</h2>
+  <p>Animiere deine Kollegen neue Themen einzugeben oder erstelle jetzt dein eigenes!</p>
+  <a class="btn btn-primary add-topic-button">Thema hinzufügen</a>
+</div>
+<div class="final-state" *ngIf="this.cards.length === 0">
   <img alt="swiped through emoji" src="../../assets/emoji.png">
   <h2>Es gibt keine Themen mehr!</h2>
   <p>Animiere deine Kollegen neue Themen einzugeben oder erstelle jetzt dein eigenes!</p>

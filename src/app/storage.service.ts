@@ -1,14 +1,36 @@
 import { Injectable } from '@angular/core';
+import {Topic} from './types/topic';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
 
-  constructor() { }
+  private topics: Topic[];
 
-  public getTopis() {
-    return [
+  constructor() {
+    this.initTopics();
+  }
+
+  public getTopis(): Topic[] {
+    return this.topics.filter(topic => !topic.liked && !topic.disliked);
+  }
+
+  public likeTopic(id: string): void {
+    let topic = this.topics.find(topic => topic.id === id);
+    topic.liked = true;
+  }
+  public dislikeTopic(id: string): void {
+    let topic = this.topics.find(topic => topic.id === id);
+    topic.disliked = true;
+  }
+
+  public getTopic(index: number | string): Topic {
+    return this.topics[index];
+  }
+
+  private initTopics() {
+    this.topics = [
       {
         id: '1',
         description: "Bergsteigen über 4000 Meter über Meer, am liebsten im Himmalaya",

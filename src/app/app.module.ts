@@ -14,7 +14,6 @@ import { environment } from 'src/environments/environment';
 import { ProfileComponent } from './profile/profile.component';
 import { MatchesComponent } from './matches/matches.component';
 import { NotificationComponent } from './notification/notification.component';
-import { TopicComponent } from './topic/topic.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 
 
@@ -28,7 +27,6 @@ import { AppointmentComponent } from './appointment/appointment.component';
     ProfileComponent,
     MatchesComponent,
     NotificationComponent,
-    TopicComponent,
     AppointmentComponent
   ],
   imports: [

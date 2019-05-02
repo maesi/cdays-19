@@ -17,11 +17,7 @@ export class AppointmentComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.topic = this.storageService.getTopis()
-                       .find(top => {
-                           return top.id === params.get('id')
-                         }
-                       )
+      this.topic = this.storageService.getTopic(params.get('index'));
     });
   }
 

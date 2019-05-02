@@ -36,7 +36,7 @@ const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
-    path: 'appointment/:id/create',
+    path: 'appointment/:index/create',
     component: AppointmentComponent,
     canActivate: [LoginGuard]
   },
