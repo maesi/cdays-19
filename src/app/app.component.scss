@@ -1,3 +1,19 @@
+.navbar a{
+  color: rgba(0,0,0,0.5) !important;
+}
+
+.navbar a.active {
+  color: rgba(0,0,0,0.9) !important;
+}
+
 .menu-text {
   font-size: 0.75rem;
+}
+
+.navbar {
+  background-color: rgba(222, 220, 210, 0.25) !important;
+}
+
+.fixed-bottom {
+  background-color: rgba(222, 220, 210, 0.25);
 }
