@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
-  returnUrl: String;
+  returnUrl: string;
   submitted: boolean;
 
   constructor(
@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    this.session.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value);
+    this.session.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value, this.returnUrl);
   }
 }

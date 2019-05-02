@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from "./types/user";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 
 const localStorageKey = "cdays-user";
 
@@ -12,11 +12,11 @@ export class SessionService {
   private user: User;
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     let userAsString = localStorage.getItem(localStorageKey);
     if (userAsString !== null) {
       let user = JSON.parse(userAsString);
-      this.login(user.username, user.passwort);
+      this.login(user.username, user.passwort, null);
     }
   }
 
@@ -28,25 +28,27 @@ export class SessionService {
     return this.user !== null && this.user !== undefined;
   }
 
-  public login(username: string, password: string): void {
+  public login(username: string, password: string, returnUrl: string): void {
     this.updateUser(username === password ? {
       username: username,
       passwort: password,
       avatar: "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
-    } : null);
+    } : null, returnUrl);
   }
 
   public logout(): void {
-    this.updateUser(null);
+    this.updateUser(null, null);
   }
 
-  private updateUser(user: User): void {
+  private updateUser(user: User, returnUrl: string | null): void {
     this.user = user;
     if (user === null) {
       localStorage.removeItem(localStorageKey);
     } else {
       localStorage.setItem(localStorageKey, JSON.stringify(user));
-      this.router.navigate(['/']);
+      if(returnUrl != null) {
+        this.router.navigate([returnUrl]);
+      }
     }
   }
 }
