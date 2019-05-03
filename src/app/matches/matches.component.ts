@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
-import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/firestore";
 import {Topic} from "../types/topic";
+import {StorageService} from '../storage.service';
 
 @Component({
   selector: 'app-matches',
@@ -9,15 +9,13 @@ import {Topic} from "../types/topic";
   styleUrls: ['./matches.component.scss']
 })
 export class MatchesComponent implements OnInit {
-  public topics: Observable<Topic[]>;
-  private topicCollection: AngularFirestoreCollection<Topic>;
+  public topics: Topic[];
 
-  constructor(private afs: AngularFirestore) {
-    this.topicCollection = afs.collection<Topic>('topic');
-    this.topics = this.topicCollection.valueChanges();
+  constructor(private storageService: StorageService) {
   }
 
   ngOnInit() {
+    this.topics = this.storageService.getTopTopics();
   }
 
 }

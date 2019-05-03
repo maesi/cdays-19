@@ -21,7 +21,7 @@ export class StorageService {
   }
 
   public getNotifikationen(): Notifikation[] {
-    return this.notifikationen.sort((a, b) => b.id - a.id);
+    return this.notifikationen;
   }
 
   public getNotifikationCount(): Observable<number> {
@@ -80,6 +80,10 @@ export class StorageService {
     return this.meetings.length + 1;
   }
 
+  public getTopTopics(): Topic[] {
+    return this.topics.filter(top => top.likes >= 7).sort((a, b) => b.likes - a.likes);
+  }
+
   private initTopics() {
     let i = 1;
     this.topics = [
@@ -87,13 +91,15 @@ export class StorageService {
         id: i++,
         description: "Wer hätte Interesse sich über Segeln und Segelturns zu unterhalten?",
         image: "https://anasail.com/wp-content/uploads/2017/11/IMG_0707-600x600.jpg",
-        label: "Segeln"
+        label: "Segeln",
+        likes: 8
       },
       {
         id: i++,
         description: "Rund um Rum",
         image: "https://www.hooky.co.uk/wp-content/uploads/luggen.jpg",
-        label: "Rum"
+        label: "Rum",
+        likes: 7
       },
       {
         id: i++,
@@ -105,13 +111,15 @@ export class StorageService {
         id: i++,
         description: "Egal ob Porsche, Ferrari oder Audi TT hauptsache schnell",
         image: "https://cdn.bringatrailer.com/wp-content/uploads/2018/11/1985_porsche_930_turbo_1541633844cffc4ab67DSCN6067-e1542984602107-940x707.jpg",
-        label: "Schnelle Autos"
+        label: "Schnelle Autos",
+        likes: 15
       },
       {
         id: i++,
         description: "Velotouren: Austausch zu den eindrücklichsten Velotouren in der Schweiz und Europa",
         image: "http://www.velo-touren.ch/Bilder/191%20gr.jpg",
-        label: "Velofahren"
+        label: "Velofahren",
+        likes: 9
       },
       {
         id: i++,
@@ -129,7 +137,8 @@ export class StorageService {
         id: i++,
         description: "Wer hat Interesse sich über Nachhaltigkeit in der allgemein und/oder in der Mobiliar auszutauschen?",
         image: "https://www.alnatura.de/~/media/Images/Content/Ueber%20uns/Nachhaltigkeit/Nachhaltigkeit_Lemniskate_mittig.jpg",
-        label: "Nachhaltigkeit"
+        label: "Nachhaltigkeit",
+        likes: 5
       },
       {
         id: i++,
@@ -148,13 +157,7 @@ export class StorageService {
         description: "Rund ums urban gardening",
         image: "https://blog.gls.de/wp-content/uploads/2018/10/URBANgardening-header-1440x680.jpg?is-pending-load=1",
         label: "Gärtnern"
-      },
-      {
-        id: i++,
-        description: "Rund ums urban gardening",
-        image: "https://blog.gls.de/wp-content/uploads/2018/10/URBANgardening-header-1440x680.jpg?is-pending-load=1",
-        label: "Gärtnern"
-      },
+      }
     ];
   }
 

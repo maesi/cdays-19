@@ -5,4 +5,5 @@ export class Topic {
   description: string;
   liked?: boolean;
   disliked?: boolean;
+  likes?: number;
 }
