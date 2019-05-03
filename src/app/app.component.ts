@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {SessionService} from "./session.service";
 import {StorageService} from './storage.service';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +15,5 @@ export class AppComponent {
   constructor(private sessionService: SessionService, private storageService: StorageService) {
     this.isLoggedIn = true;
     this.storageService.getNotifikationCount().subscribe(value => this.notifikationCount = value);
-    document.getElementById('app-root').requestFullscreen();
   }
 }
