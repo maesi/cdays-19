@@ -81,40 +81,80 @@ export class StorageService {
   }
 
   private initTopics() {
+    let i = 1;
     this.topics = [
       {
-        id: 1,
-        description: "Bergsteigen über 4000 Meter über Meer, am liebsten im Himmalaya",
-        image: "https://www.bergwelten.com/files/article/images/mauritius-Himalaya-0_0.jpg?output-format=jpg&output-quality=60&downsize=1200px:*",
-        label: "Bergsteigen"
-      }, {
-        id: 2,
-        description: "Alles mögliche mit Microsoft Excel",
-        image: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2sxJ0?ver=3b55&q=90&m=2&h=768&w=1024&b=%23FFFFFFFF&aim=true",
-        label: "Excel"
+        id: i++,
+        description: "Wer hätte Interesse sich über Segeln und Segelturns zu unterhalten?",
+        image: "https://anasail.com/wp-content/uploads/2017/11/IMG_0707-600x600.jpg",
+        label: "Segeln"
       },
       {
-        id: 3,
-        description: "Bergsteigen über 4000 Meter über Meer, am liebsten im Himmalaya",
-        image: "https://www.bergwelten.com/files/article/images/mauritius-Himalaya-0_0.jpg?output-format=jpg&output-quality=60&downsize=1200px:*",
-        label: "Bergsteigen"
-      }, {
-        id: 4,
-        description: "Alles mögliche mit Microsoft Excel",
-        image: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2sxJ0?ver=3b55&q=90&m=2&h=768&w=1024&b=%23FFFFFFFF&aim=true",
-        label: "Excel"
+        id: i++,
+        description: "Rund um Rum",
+        image: "https://www.hooky.co.uk/wp-content/uploads/luggen.jpg",
+        label: "Rum"
       },
       {
-        id: 5,
-        description: "Bergsteigen über 4000 Meter über Meer, am liebsten im Himmalaya",
-        image: "https://www.bergwelten.com/files/article/images/mauritius-Himalaya-0_0.jpg?output-format=jpg&output-quality=60&downsize=1200px:*",
-        label: "Bergsteigen"
-      }, {
-        id: 6,
-        description: "Alles mögliche mit Microsoft Excel",
-        image: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2sxJ0?ver=3b55&q=90&m=2&h=768&w=1024&b=%23FFFFFFFF&aim=true",
-        label: "Excel"
-      }
+        id: i++,
+        description: "Bist du auch dabei?",
+        image: "https://www.loufmeter.ch/wp-content/uploads/2019/03/2019_Kaleidoskop_web-e1552419999814-450x450.jpg",
+        label: "Mode"
+      },
+      {
+        id: i++,
+        description: "Egal ob Porsche, Ferrari oder Audi TT hauptsache schnell",
+        image: "https://cdn.bringatrailer.com/wp-content/uploads/2018/11/1985_porsche_930_turbo_1541633844cffc4ab67DSCN6067-e1542984602107-940x707.jpg",
+        label: "Schnelle Autos"
+      },
+      {
+        id: i++,
+        description: "Velotouren: Austausch zu den eindrücklichsten Velotouren in der Schweiz und Europa",
+        image: "http://www.velo-touren.ch/Bilder/191%20gr.jpg",
+        label: "Velofahren"
+      },
+      {
+        id: i++,
+        description: "Wär doch was?",
+        image: "https://static01.nyt.com/images/2017/03/31/well/yoga-for-strength/yoga-for-strength-jumbo.jpg",
+        label: "Yoga"
+      },
+      {
+        id: i++,
+        description: "Was wäre die Welt ohne die Kunst",
+        image: "https://www.ziehn-dickmeis.de/wordpress/wp-content/uploads/2017/10/Haley-Zebras.jpg",
+        label: "Kunst"
+      },
+      {
+        id: i++,
+        description: "Wer hat Interesse sich über Nachhaltigkeit in der allgemein und/oder in der Mobiliar auszutauschen?",
+        image: "https://www.alnatura.de/~/media/Images/Content/Ueber%20uns/Nachhaltigkeit/Nachhaltigkeit_Lemniskate_mittig.jpg",
+        label: "Nachhaltigkeit"
+      },
+      {
+        id: i++,
+        description: "Die Sonnenstube der Schweiz",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Wappen_Tessin_matt.svg/1200px-Wappen_Tessin_matt.svg.png",
+        label: "Tessin"
+      },
+      {
+        id: i++,
+        description: "Judo und Japan",
+        image: "https://previews.123rf.com/images/airindizain/airindizain1706/airindizain170600006/80557004-judo-vector-set-kimono-and-throws-characters-of-the-word-judo-.jpg",
+        label: "Judo"
+      },
+      {
+        id: i++,
+        description: "Rund ums urban gardening",
+        image: "https://blog.gls.de/wp-content/uploads/2018/10/URBANgardening-header-1440x680.jpg?is-pending-load=1",
+        label: "Gärtnern"
+      },
+      {
+        id: i++,
+        description: "Ich möchte mehr darüber wissen",
+        image: "https://images.techhive.com/images/article/2014/07/onenote-amazon-app-store-100361701-large.jpg",
+        label: "OneNote"
+      },
     ];
   }
 
