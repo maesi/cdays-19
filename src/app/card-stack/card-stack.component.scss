@@ -46,14 +46,14 @@
 
 .match-text {
   position: relative;
-  top: 12rem;
+  top: 15vh;
   z-index: 52;
   max-width: 100%;
 }
 
 .explosion {
   position: relative;
-  top: 2rem;
+  top: -7vh;
   left: 0;
   right: 0;
   z-index: 51;
@@ -62,12 +62,20 @@
 
 .match-description {
   position: relative;
-  top: 5rem;
+  top: -5vh;
   z-index: 52;
   max-width: 100%;
   color: #fff;
   text-align: center;
   padding: 0 20px 0 20px;
+}
+
+.match-description h4 {
+  font-size: 3vh;
+}
+
+.match-description h5 {
+  font-size: 2vh;
 }
 
 .match-description hr {
@@ -76,7 +84,7 @@
 
 .match-buttons {
   position: relative;
-  top: 5rem;
+  top: -5vh;
   width: 100%;
 }
 .create-event-button {
