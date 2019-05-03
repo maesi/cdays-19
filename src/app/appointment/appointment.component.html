@@ -25,7 +25,7 @@
   <p *ngIf="meeting.created">Sie haben das Meeting erstellt</p>
   <p *ngIf="meeting.participate">Sie nehmen am Meeting teil</p>
     <p>Veranstaltungsort: {{meeting.ort}}</p>
-    <p>Datum: {{meeting.datum}}</p>
+    <p>Datum: {{meeting.datum | date: 'dd.MM.yyyy'}}</p>
   <form  *ngIf="!meeting.participate">
     <a (click)="participate()" class="btn btn-success create-event-button">Bin dabei!</a>
     <a (click)="notParticipate()" class="btn btn-danger create-event-button">Ich kann nicht.</a>
