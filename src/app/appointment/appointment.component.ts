@@ -56,6 +56,7 @@ export class AppointmentComponent implements OnInit {
         this.storageService.addNotifikation({
           id: this.storageService.getNotifikationId(),
           typ: NotifikationTyp.EVENT,
+          read: false,
           relation: meeting
         });
       }, 5000);
@@ -69,6 +70,7 @@ export class AppointmentComponent implements OnInit {
       this.storageService.addNotifikation({
         id: this.storageService.getNotifikationId(),
         typ: NotifikationTyp.PARTIPICATE,
+        read: false,
         relation: this.storageService.getMeeting(1)
       });
     }, 3000);

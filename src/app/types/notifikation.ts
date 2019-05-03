@@ -5,6 +5,7 @@ import {User} from "./user";
 export interface Notifikation {
   id: number;
   typ: NotifikationTyp;
+  read: boolean;
   relation: Topic | Meeting;
 }
 

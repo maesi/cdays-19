@@ -1,7 +1,7 @@
 <hr>
 <div *ngFor="let not of notifikationen">
-  <a class="notification" *ngIf="not.typ === NotifikationTyp.MATCH" [routerLink]="['/appointment', not.relation.topic.id , 'create']">
-    <div class="media">
+  <a class="notification" *ngIf="not.typ === NotifikationTyp.MATCH" (click)="openNotification(not.id, ['/appointment', not.relation.topic.id , 'create'])">
+    <div class="media" [class.notification-new]="!not.read">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/trophy.png" height="64px" width="64px" />
       <p><b>Dein Thema {{not.relation.label}}gewinnt an Interesse!</b></p>
@@ -9,8 +9,8 @@
     <hr>
   </a>
 
-  <a class="notification" *ngIf="not.typ === NotifikationTyp.EVENT" [routerLink]="['/appointment', not.relation.id]">
-    <div class="media">
+  <a class="notification" *ngIf="not.typ === NotifikationTyp.EVENT" (click)="openNotification(not.id, ['/appointment', not.relation.id])">
+    <div class="media" [class.notification-new]="!not.read">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/calendar.jpg" height="64px" width="64px" />
       <div class="media-body">
@@ -20,8 +20,8 @@
     <hr>
   </a>
 
-  <a class="notification" *ngIf="not.typ === NotifikationTyp.PARTIPICATE" [routerLink]="['/appointment', not.relation.id]">
-    <div class="media">
+  <a class="notification" *ngIf="not.typ === NotifikationTyp.PARTIPICATE" (click)="openNotification(not.id, ['/appointment', not.relation.id])">
+    <div class="media" [class.notification-new]="!not.read">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/max.jpg" height="64px" width="64px" />
       <div class="media-body">
