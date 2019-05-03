@@ -151,9 +151,9 @@ export class StorageService {
       },
       {
         id: i++,
-        description: "Ich möchte mehr darüber wissen",
-        image: "https://images.techhive.com/images/article/2014/07/onenote-amazon-app-store-100361701-large.jpg",
-        label: "OneNote"
+        description: "Rund ums urban gardening",
+        image: "https://blog.gls.de/wp-content/uploads/2018/10/URBANgardening-header-1440x680.jpg?is-pending-load=1",
+        label: "Gärtnern"
       },
     ];
   }
