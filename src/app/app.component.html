@@ -1,11 +1,11 @@
 <div *ngIf="isLoggedIn" class="row">
   <div class="col">
     <nav class="navbar navbar-light fixed-top bg-light bg-shadow">
-      <a class="navbar-brand text-center" routerLink="/profile" routerLinkActive="active"><i class="fas fa-user"></i><br/><span class="menu-text">Profil</span></a>
-      <a class="navbar-brand text-center" routerLink="/explore" routerLinkActive="active"><i class="fab fa-wpexplorer"></i><br/><span class="menu-text">Entdecken</span></a>
-      <a class="navbar-brand text-center" routerLink="/matches" routerLinkActive="active"><i class="fas fa-history"></i><br/><span class="menu-text">Interessen</span></a>
+      <a class="navbar-brand text-center" routerLink="/profile" routerLinkActive="active"><i class="fas fa-user"></i><!-- <br/><span class="menu-text">Profil</span>--></a>
+      <a class="navbar-brand text-center" routerLink="/explore" routerLinkActive="active"><i class="fas fa-binoculars"></i><!-- <br/><span class="menu-text">Entdecken</span>--></a>
+      <a class="navbar-brand text-center" routerLink="/matches" routerLinkActive="active"><i class="fas fa-thumbs-up"></i><!-- <br/><span class="menu-text">Interessen</span>--></a>
       <a id="notifications" class="navbar-brand text-center" routerLink="/notifications" routerLinkActive="active"><i class="fas fa-bell"></i><br/>
-        <span class="menu-text">Nachrichten</span>
+        <!-- <span class="menu-text">Nachrichten</span> -->
         <span id="notification-counter" class="badge badge-danger" *ngIf="notifikationCount > 0">{{notifikationCount}}</span>
       </a>
     </nav>
