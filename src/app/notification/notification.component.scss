@@ -1,6 +1,9 @@
 .notification-image {
   border-radius: 50%;
-  border: 1px solid black;
+  border: transparent;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 4px 0px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 4px 0px rgba(0,0,0,0.25);
 }
 
 .notification {

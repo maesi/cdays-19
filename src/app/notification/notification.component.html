@@ -23,12 +23,14 @@
   <a class="notification" *ngIf="not.typ === NotifikationTyp.PARTIPICATE" (click)="openNotification(not.id, ['/appointment', not.relation.id])">
     <div class="media" [class.notification-new]="!not.read">
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
-           src="../../assets/max.jpg" height="64px" width="64px" />
+           src="../../assets/profile.png" height="64px" width="64px" />
       <div class="media-body">
         <p><b>Neuer Teilnehmer!</b> Du hast eine neue Anmeldung zu deinem Event vom {{not.relation.datum | date: 'dd.MM.yyyy'}} zum Thema {{not.relation.topic.label}} </p>
       </div>
     </div>
     <hr>
   </a>
-
+  <div *ngIf="notifikationen.length === 0">
+    <p>Derzeit gibt es keine Notifikationen</p>
+  </div>
 </div>
