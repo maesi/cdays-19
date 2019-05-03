@@ -82,11 +82,11 @@ export class AppointmentComponent implements OnInit {
         relation: this.storageService.getMeeting(1)
       });
     }, 3000);
-    this.router.navigate(['/']);
+    this.router.navigate(['/notifications']);
   }
 
   notParticipate(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/notifications']);
   }
 
 
