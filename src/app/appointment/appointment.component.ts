@@ -67,7 +67,7 @@ export class AppointmentComponent implements OnInit {
           read: false,
           relation: meeting
         });
-      }, 5000);
+      }, 2500);
     }
     this.router.navigate(['/']);
   }
