@@ -21,15 +21,17 @@ export class StorageService {
   }
 
   public getNotifikationen(): Notifikation[] {
-    return this.notifikationen;
+    return this.notifikationen.sort((a, b) => b.id - a.id);
   }
 
   public getNotifikationCount(): Observable<number> {
     return this.notifikationCount.asObservable();
   }
 
-  public resetNotifikationCount(): void {
-    this.notifikationCount.next(0);
+  public readNotifikation(id: number): void {
+    const notifikation =  this.notifikationen.find(not => not.id === id);
+    notifikation.read = true;
+    this.updateNotifkationCount();
   }
 
   public getTopis(): Topic[] {
@@ -55,7 +57,11 @@ export class StorageService {
 
   public addNotifikation(notifikation: Notifikation): void {
     this.notifikationen.push(notifikation);
-    this.notifikationCount.next(this.notifikationCount.value + 1);
+    this.updateNotifkationCount();
+  }
+
+  private updateNotifkationCount(): void {
+    this.notifikationCount.next(this.notifikationen.filter(not => !not.read).length);
   }
 
   public getNotifikationId(): number {
