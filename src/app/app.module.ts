@@ -16,7 +16,6 @@ import { MatchesComponent } from './matches/matches.component';
 import { NotificationComponent } from './notification/notification.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 
 
 @NgModule({
