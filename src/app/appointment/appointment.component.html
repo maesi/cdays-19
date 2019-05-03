@@ -1,22 +1,27 @@
 <div class="topic-image"><img [src]="topic.image" class="topic-image"/></div>
 <h1 class="topic-image-title">{{topic.label}}</h1>
 <p>{{topic.description}}</p>
-<div *ngIf="createMode"><!-- Aria for creating an Appointment -->
+
+<div *ngIf="createMode">
+  <form (ngSubmit)="onCreate()" [formGroup]="form">
   <div class="form-group">
     <label for="place">Veranstaltungsort</label>
-    <input type="place" class="form-control" id="place" placeholder="Gib einen Ort ein...">
+    <select class="form-control" id="place" formControlName="ort">
+      <option value="Bern" selected="selected">Bern</option>
+      <option value="Nyon">Nyon</option>
+      <option value="Zürich">Zürich</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="date">Datum</label>
-    <input type="date" class="form-control" aria-describedby="dateHelp" id="date" placeholder="Datum eingeben...">
+    <input type="date" class="form-control" aria-describedby="dateHelp" id="date" formControlName="datum" placeholder="Datum eingeben...">
     <small id="dateHelp" class="form-text text-muted">Denk dran, jeder Termin findet von 12:00 bis 13:00 statt.</small>
   </div>
-  <a (click)="create()" class="btn btn-primary create-event-button">Event
-    erstellen</a>
+  <button type="submit" class="btn btn-primary create-event-button">Event erstellen</button>
+  </form>
 </div>
 
-
-<div *ngIf="!createMode"><!-- Aria for participating to an Appointment -->
+<div *ngIf="!createMode">
   <p *ngIf="meeting.created">Sie haben das Meeting erstellt</p>
   <p *ngIf="meeting.participate">Sie nehmen am Meeting teil</p>
     <p>Veranstaltungsort: {{meeting.ort}}</p>
