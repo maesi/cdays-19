@@ -16,10 +16,12 @@
 
 .navbar {
   background-color: rgba(222, 220, 210, 0.25) !important;
+  z-index: 1;
 }
 
 .fixed-bottom {
   background-color: rgba(222, 220, 210, 0.25);
+  z-index: 1;
 }
 
 #notifications {
