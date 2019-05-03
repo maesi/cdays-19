@@ -74,18 +74,30 @@ export class AppointmentComponent implements OnInit {
 
   participate(): void {
     this.meeting.participate = true;
-    setTimeout(() => {
-      this.storageService.addNotifikation({
-        id: this.storageService.getNotifikationId(),
-        typ: NotifikationTyp.PARTIPICATE,
-        read: false,
-        relation: this.storageService.getMeeting(1)
-      });
-    }, 3000);
+    if(this.storageService.getNotifikationen().length === 1) {
+      setTimeout(() => {
+        this.storageService.addNotifikation({
+          id: this.storageService.getNotifikationId(),
+          typ: NotifikationTyp.PARTIPICATE,
+          read: false,
+          relation: this.storageService.getMeeting(1)
+        });
+      }, 3000);
+    }
     this.router.navigate(['/notifications']);
   }
 
   notParticipate(): void {
+    if(this.storageService.getNotifikationen().length === 1) {
+      setTimeout(() => {
+        this.storageService.addNotifikation({
+          id: this.storageService.getNotifikationId(),
+          typ: NotifikationTyp.PARTIPICATE,
+          read: false,
+          relation: this.storageService.getMeeting(1)
+        });
+      }, 3000);
+    }
     this.router.navigate(['/notifications']);
   }
 
