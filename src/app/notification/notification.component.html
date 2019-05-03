@@ -14,7 +14,7 @@
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/calendar.jpg" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>Es gibt ein Event für dein Interesse!</b> Am {{not.relation.datum}} findet ein Austausch zum Thema {{not.relation.topic.label}} statt - nimmst du teil?</p>
+        <p><b>Es gibt ein Event für dein Interesse!</b> Am {{not.relation.datum | date: 'dd.MM.yyyy'}} findet ein Austausch zum Thema {{not.relation.topic.label}} statt - nimmst du teil?</p>
       </div>
     </div>
     <hr>
@@ -25,7 +25,7 @@
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/max.jpg" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>Neuer Teilnehmer!</b> Du hast eine neue Anmeldung zu deinem Event vom {{not.relation.datum}} zum Thema {{not.relation.topic.label}} </p>
+        <p><b>Neuer Teilnehmer!</b> Du hast eine neue Anmeldung zu deinem Event vom {{not.relation.datum | date: 'dd.MM.yyyy'}} zum Thema {{not.relation.topic.label}} </p>
       </div>
     </div>
     <hr>

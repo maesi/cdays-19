@@ -30,9 +30,10 @@ export class SessionService {
 
   public login(username: string, password: string, returnUrl: string): void {
     this.updateUser(username === password ? {
+      name: 'Nathalie',
       username: username,
       passwort: password,
-      avatar: "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
+      avatar: "assets/nathalie.jpg"
     } : null, returnUrl);
   }
 
