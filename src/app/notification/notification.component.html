@@ -1,4 +1,3 @@
-<hr>
 <div *ngFor="let not of notifikationen">
   <a class="notification" *ngIf="not.typ === NotifikationTyp.MATCH" (click)="openNotification(not.id, ['/appointment', not.relation.topic.id , 'create'])">
     <div class="media" [class.notification-new]="!not.read">
@@ -6,7 +5,6 @@
            src="../../assets/trophy.png" height="64px" width="64px" />
       <p><b>Dein Thema {{not.relation.label}}gewinnt an Interesse!</b></p>
     </div>
-    <hr>
   </a>
 
   <a class="notification" *ngIf="not.typ === NotifikationTyp.EVENT" (click)="openNotification(not.id, ['/appointment', not.relation.id])">
@@ -14,10 +12,9 @@
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/calendar.jpg" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>Es gibt ein Event für dein Interesse!</b> Am {{not.relation.datum | date: 'dd.MM.yyyy'}} findet ein Austausch zum Thema {{not.relation.topic.label}} statt - nimmst du teil?</p>
+        <p>Am <b>{{not.relation.datum | date: 'dd.MM.yyyy'}}</b> findet ein Austausch zum Thema <b>{{not.relation.topic.label}}</b> statt! - Nimmst du teil?</p>
       </div>
     </div>
-    <hr>
   </a>
 
   <a class="notification" *ngIf="not.typ === NotifikationTyp.PARTIPICATE" (click)="openNotification(not.id, ['/appointment', not.relation.id])">
@@ -25,10 +22,9 @@
       <img alt="topic_name" class="align-self-center mr-3 notification-image"
            src="../../assets/profile.png" height="64px" width="64px" />
       <div class="media-body">
-        <p><b>Neuer Teilnehmer!</b> Du hast eine neue Anmeldung zu deinem Event vom {{not.relation.datum | date: 'dd.MM.yyyy'}} zum Thema {{not.relation.topic.label}} </p>
+        <p>Neuer Teilnehmer! Du hast eine neue Anmeldung zu deinem Event vom <b>{{not.relation.datum | date: 'dd.MM.yyyy'}}</b> zum Thema <b>{{not.relation.topic.label}}</b> </p>
       </div>
     </div>
-    <hr>
   </a>
   <div *ngIf="notifikationen.length === 0">
     <p>Derzeit gibt es keine Notifikationen</p>
