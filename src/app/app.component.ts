@@ -16,5 +16,6 @@ export class AppComponent {
   constructor(private sessionService: SessionService, private storageService: StorageService) {
     this.isLoggedIn = true;
     this.storageService.getNotifikationCount().subscribe(value => this.notifikationCount = value);
+    document.getElementById('app-root').requestFullscreen();
   }
 }
