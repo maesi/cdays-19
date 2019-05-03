@@ -32,14 +32,47 @@
   position: relative;
   text-align: center;
   border-radius: 50%;
-  background-color: rgba(0, 157, 120, 0.75);
-  border-color: rgba(0, 157, 120, 0.75);
+  border-color: transparent;
   font-size: 30px;
   padding: 2% 5%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: rgba(0, 157, 120, 0.75) !important;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 4px 0px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 4px 0px rgba(0,0,0,0.25);
 }
 
 .appointment-actions {
   text-align: center;
+}
+
+.join-event-button {
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+  border-color: transparent;
+  font-size: 30px;
+  padding: 2% 5%;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: rgba(0, 157, 120, 0.75) !important;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 4px 0px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 4px 0px rgba(0,0,0,0.25);
+}
+
+.cancel-event-button {
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+  border-color: transparent;
+  font-size: 30px;
+  padding: 2% 6%;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #da2323 !important;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 4px 0px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 4px 0px rgba(0,0,0,0.25);
 }

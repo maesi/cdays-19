@@ -26,8 +26,8 @@
     <p>Veranstaltungsort: {{meeting.ort}}</p>
     <p>Datum: {{meeting.datum | date: 'dd.MM.yyyy'}}</p>
   <form  *ngIf="!meeting.participate">
-    <a (click)="participate()" class="btn btn-success create-event-button">Bin dabei!</a>
-    <a (click)="notParticipate()" class="btn btn-danger create-event-button">Ich kann nicht.</a>
+    <a (click)="notParticipate()" class="btn btn-danger cancel-event-button"><i class="fas fa-times"></i></a>
+    <a (click)="participate()" class="btn btn-success join-event-button"><i class="far fa-calendar-check"></i></a>
   </form>
 
 </div>
